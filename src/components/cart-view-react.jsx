@@ -25,6 +25,7 @@ export default class CartViewReact extends React.Component {
   render() {
     return (
         <div>
+          ShoppingcartView
           {this.state.shoppingCarts.map(function (shoppingCart) {
             return <div>{shoppingCart.id}</div>
           })}
