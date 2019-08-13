@@ -40,7 +40,9 @@ export default class OrderViewReact extends React.Component {
             Collapsible
           </header>
           <section hidden={isCollapsed}>
-            NOT Collapsed
+            {this.state.ticketOrders.map(function (ticketOrder) {
+              return <div>{ticketOrder.id}</div>
+            })}
           </section>
         </div>
     );
