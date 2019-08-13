@@ -25,6 +25,7 @@ export default class CartIconReact extends React.Component {
   render() {
     return (
         <div>
+          <a href="/shoppingcart"></a>
           ICON {this.state.shoppingCarts.length}
         </div>
     );
