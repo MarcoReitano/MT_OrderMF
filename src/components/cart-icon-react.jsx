@@ -6,7 +6,7 @@ export default class CartIconReact extends React.Component {
 
     // Load Fonnawesome and append to webcomponent shadowdom
     const s = document.createElement('script');
-    s.source = "https://kit.fontawesome.com/234e3f962f.js";
+    s.src = "https://kit.fontawesome.com/234e3f962f.js";
     s.type = 'text/javascript';
     s.async = true;
     this.instance.appendChild(s);
