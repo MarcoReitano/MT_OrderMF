@@ -5,11 +5,11 @@ export default class CartIconReact extends React.Component {
   componentDidMount = () => {
 
     // Load Fonnawesome and append to webcomponent shadowdom
-    const s = document.createElement('script');
-    s.src = "https://kit.fontawesome.com/234e3f962f.js";
-    s.type = 'text/javascript';
-    s.async = true;
-    this.instance.appendChild(s);
+    // const s = document.createElement('script');
+    // s.src = "https://kit.fontawesome.com/234e3f962f.js";
+    // s.type = 'text/javascript';
+    // s.async = true;
+    // this.instance.appendChild(s);
 
     // Rest Call
     axios.get("https://api.marcoreitano.dev/shoppingcarts")
@@ -33,12 +33,21 @@ export default class CartIconReact extends React.Component {
 
   render() {
     return (
-        <div ref={el => (this.instance = el)}>
-          <a href="/shoppingcart">
-            <i class="fas fa-shopping-cart"></i>
-          </a>
-          ICON {this.state.shoppingCarts.length}
-        </div>
-    );
-  }
-}
+        <link rel="stylesheet"
+              href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css"
+              media="all">
+          <link rel="stylesheet"
+                href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css"
+                media="all">
+            <link rel="stylesheet"
+                  href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css"
+                  media="all">
+              <div>
+                <a href="/shoppingcart">
+                  <i class="fas fa-shopping-cart"></i>
+                </a>
+                ICON {this.state.shoppingCarts.length}
+              </div>
+              );
+              }
+              }
