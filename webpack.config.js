@@ -1,6 +1,30 @@
 const path = require('path');
 
 module.exports = [
+  // {
+  //   entry: './src/index.ts',
+  //   module: {
+  //     rules: [
+  //       {
+  //         test: /\.tsx?$/,
+  //         use: 'ts-loader',
+  //         exclude: /node_modules/
+  //       }
+  //     ]
+  //   },
+  //   resolve: {
+  //     extensions: ['.tsx', '.ts', '.js']
+  //   },
+  //   output: {
+  //     filename: 'order-es2015.js',
+  //     path: path.resolve(__dirname, 'dist')
+  //   },
+  //   devServer: {
+  //     contentBase: path.join(__dirname, 'dist'),
+  //     compress: true,
+  //     port: 9000
+  //   }
+  // }
   {
     entry: './src/index.js',
     output: {
@@ -14,8 +38,11 @@ module.exports = [
           exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
+
             options: {
+              plugins: ['@babel/plugin-proposal-class-properties'],
               presets: [
+                '@babel/preset-react',
                 ['@babel/preset-env',
                   {
                     targets: {
@@ -28,6 +55,7 @@ module.exports = [
                       ]
                     },
                     useBuiltIns: 'usage',
+                    corejs: 3,
                     modules: false
                   }]
               ]
@@ -43,6 +71,11 @@ module.exports = [
       filename: 'order-es2015.js',
       path: path.resolve(__dirname, 'dist')
     },
+    devServer: {
+      contentBase: path.join(__dirname, 'dist'),
+      compress: true,
+      port: 9000
+    },
     module: {
       rules: [
         {
@@ -51,7 +84,9 @@ module.exports = [
           use: {
             loader: 'babel-loader',
             options: {
+              plugins: ['@babel/plugin-proposal-class-properties'],
               presets: [
+                '@babel/preset-react',
                 ['@babel/preset-env',
                   {
                     targets: {
@@ -64,10 +99,10 @@ module.exports = [
                         'Chrome >= 61',
                         'Safari >= 11',
                         'Opera >= 48'
-                      ],
-                      esmodules: true
+                      ]
                     },
                     useBuiltIns: 'usage',
+                    corejs: 3,
                     modules: false
                   }]
               ]
@@ -76,4 +111,5 @@ module.exports = [
         }
       ]
     }
-  }];
+  }
+];

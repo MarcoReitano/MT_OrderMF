@@ -1,1 +1,1 @@
-import './components/order-view'
+import './components/order-view-component'

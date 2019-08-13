@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Mitneve</title>
+
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+
+  <!--ROUTER-->
+  <!--<script nomodule src="https://unpkg.com/@vaadin/router/dist/vaadin-router.umd.js"></script>-->
+  <!--<script nomodule>-->
+  <!--var Router = Vaadin.Router;-->
+  <!--</script>-->
+
+  <script type="module">
+    import {Router} from 'https://unpkg.com/@vaadin/router';
+
+    const outlet = document.getElementById('outlet');
+    const router = new Router(outlet);
+
+    router.setRoutes([
+      {path: '/', component: 'catalogue-home-view'},
+      {path: '/search', component: 'catalogue-search-results'},
+      {path: '/artist/:id', component: 'catalogue-artist-detail-view'},
+      {path: '/concert/:id', component: 'catalogue-concert-detail-view'},
+      {path: '/venue/:id', component: 'catalogue-venue-detail-view'},
+      {path: '/order', component: 'order-view'},
+      {path: '(.*)', component: 'not-found-view'}
+    ]);
+  </script>
+
+  <!--POLYFILL-->
+  <script src="https://unpkg.com/@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+
+  <!--WEB COMPONENTS-->
+  <!--<script src="https://unpkg.com/vue"></script>-->
+  <script type="module" src="/not-found-view.js"></script>
+  <script type="module"
+          src="https://marcoreitano.dev/webcomponents/catalogue/es2015/catalogue.js"></script>
+  <script src="https://marcoreitano.dev/webcomponents/catalogue/es5/catalogue.js" nomodule></script>
+
+  <script type="module" src="order-es2015.js"></script>
+  <!--<script src="https://marcoreitano.dev/webcomponents/order/order-es5.js" nomodule></script>-->
+
+  <script type="module"
+          src="https://marcoreitano.dev/webcomponents/profile/profile-es2015.js"></script>
+  <script src="https://marcoreitano.dev/webcomponents/profile/profile-es5.js" nomodule></script>
+
+</head>
+<body><!--NAVIGATION-->
+<nav class="navbar" role="navigation" aria-label="main navigation">
+  <div class="container">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="/">
+        <img src="/resources/mitneve-logo.png" width="112" height="28">
+      </a>
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+         data-target="navbarmitneve">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarmitneve" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="/">
+          Home
+        </a>
+        <a class="navbar-item" href="/search">
+          Search
+        </a>
+        <a class="navbar-item" href="/artist/123">
+          AristDetailView
+        </a>
+        <a class="navbar-item" href="/order">
+          AristDetailView
+        </a>
+      </div>
+
+      <div class="navbar-end">
+        <div class="navbar-item">
+          <profile-login></profile-login>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="hero is-dark is-small">
+  <div class="hero-body">
+    <div class="columns">
+      <div class="column is-half is-offset-one-quarter">
+        <catalogue-search></catalogue-search>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <main class="columns">
+    <div class="column is-two-thirds is-offset-2" id="outlet">
+    </div>
+  </main>
+</section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Mitneve</strong> by <a href="https://marcoreitano.dev">Marco Reitano</a>.
+    </p>
+  </div>
+</footer>
+</body>
