@@ -1,16 +1,8 @@
 import * as React from 'react';
 import axios from 'axios';
-import '@fortawesome/fontawesome-free/js/solid'
 
 export default class CartIconReact extends React.Component {
   componentDidMount = () => {
-
-    // Load Fonnawesome and append to webcomponent shadowdom
-    // const s = document.createElement('script');
-    // s.src = "https://kit.fontawesome.com/234e3f962f.js";
-    // s.type = 'text/javascript';
-    // s.async = true;
-    // this.instance.appendChild(s);
 
     // Rest Call
     axios.get("https://api.marcoreitano.dev/shoppingcarts")
@@ -35,6 +27,14 @@ export default class CartIconReact extends React.Component {
   render() {
     return (
         <div>
+          <style>
+            @import
+            "https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css";
+            @import
+            "https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css";
+            @import
+            "https://kit-free.fontawesome.com/releases/latest/css/free.min.css";
+          </style>
           <a href="/shoppingcart">
             <i class="fas fa-shopping-cart"></i>
           </a>
