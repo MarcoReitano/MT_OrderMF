@@ -56,7 +56,7 @@ export default class CartIconReact extends React.Component {
           <a className="fa-stack fa-2x has-badge"
              href="/shoppingcart"
              data-count={this.state.shoppingCarts.length}>
-            <i className="fa fa-shopping-cart fa-stack-1x"></i>
+            <i class="fa fa-shopping-cart fa-stack-1x"></i>
           </a>
         </div>
     );
