@@ -6,7 +6,7 @@ export default class CartIconReact extends React.Component {
     axios.get("https://api.marcoreitano.dev/shoppingcarts")
     .then(response => {
 
-      const newShoppingCart = response.data._embedded.shoppingcarts;
+      const newShoppingCart = response.data._embedded.shoppingCarts;
 
       const newState = Object.assign({}, this.state,
           {shoppingCarts: newShoppingCart});

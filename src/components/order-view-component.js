@@ -4,12 +4,6 @@ import * as retargetEvents from 'react-shadow-dom-retarget-events'
 import OrderViewReact from './order-view-react.jsx';
 
 class OrderView extends HTMLElement {
-  // mountPoint: HTMLSpanElement;
-  // title: string;
-
-  // static get observedAttributes() {
-  //   return ['title'];
-  // }
 
   createOrderView() {
     return React.createElement(OrderViewReact, [], React.createElement('slot'));
