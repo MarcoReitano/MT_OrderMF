@@ -23,12 +23,6 @@ class OrderView extends HTMLElement {
     ReactDOM.render(this.createOrderView(), this.mountPoint);
     retargetEvents(shadowRoot);
   }
-
-  // attributeChangedCallback(name: string, oldValue: any, newValue: any) {
-  //   if (name === 'title') {
-  //     ReactDOM.render(this.createCollapsed(newValue), this.mountPoint);
-  //   }
-  // }
 }
 
 window.customElements.define('order-view', OrderView);
