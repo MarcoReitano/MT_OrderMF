@@ -1,5 +1,6 @@
 import * as React from 'react';
 import axios from 'axios';
+import '@fortawesome/fontawesome-free/js/solid'
 
 export default class CartIconReact extends React.Component {
   componentDidMount = () => {
@@ -33,21 +34,12 @@ export default class CartIconReact extends React.Component {
 
   render() {
     return (
-        <link rel="stylesheet"
-              href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css"
-              media="all">
-          <link rel="stylesheet"
-                href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css"
-                media="all">
-            <link rel="stylesheet"
-                  href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css"
-                  media="all">
-              <div>
-                <a href="/shoppingcart">
-                  <i class="fas fa-shopping-cart"></i>
-                </a>
-                ICON {this.state.shoppingCarts.length}
-              </div>
-              );
-              }
-              }
+        <div>
+          <a href="/shoppingcart">
+            <i class="fas fa-shopping-cart"></i>
+          </a>
+          ICON {this.state.shoppingCarts.length}
+        </div>
+    );
+  }
+}
