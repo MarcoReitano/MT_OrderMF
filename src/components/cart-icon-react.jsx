@@ -5,6 +5,7 @@ export default class CartIconReact extends React.Component {
   componentDidMount = () => {
 
     // Rest Call
+    console.log("Icon auth: " + keycloak.authenticated);
     axios.get("https://api.marcoreitano.dev/shoppingcarts")
     .then(response => {
 
