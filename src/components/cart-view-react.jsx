@@ -32,7 +32,7 @@ export default class CartViewReact extends React.Component {
         <div>
           ShoppingcartView
           {this.state.cartItems.map(function (item) {
-            return <div>{{item.quantity}}</div>
+            return <div>{item.quantity}</div>
           })}
         </div>
     );
