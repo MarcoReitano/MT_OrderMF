@@ -22,7 +22,13 @@ export default class AddCartButtonReact extends React.Component {
         {headers: {'Authorization': "bearer " + keycloak.token}}
     )
     .then(response => {
-    }).catch(error => console.log(error));
+    })
+    .catch(error => {
+      console.log("Axios Error");
+      console.log("Status: " + error.response.status);
+      console.log("Data: " + error.response.data);
+      console.log("Headers: " + error.response.headers)
+    });
   };
   componentDidMount = () => {
     console.log(this.props.ticketuri);
