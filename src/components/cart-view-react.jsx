@@ -27,13 +27,33 @@ export default class CartViewReact extends React.Component {
     }).catch(error => console.log(error));
   }
 
+  handleDelete() {
+    console.log("Should delete");
+  }
+
   render() {
     return (
         <div>
+          <style>
+            @import
+            "https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css";
+            @import
+            "https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css";
+            @import
+            "https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css";
+            @import
+            "https://kit-free.fontawesome.com/releases/latest/css/free.min.css";
+          </style>
           ShoppingcartView
-          {this.state.cartItems.map(function (item) {
-            return <div>{item.quantity}</div>
-          })}
+          {this.state.cartItems.map((item) => (
+                  <div>
+                    <div>{item.quantity}</div>
+                    <button className="button" onClick={this.handleDelete}>
+                      <i className="fas fa-times"/>
+                    </button>
+                  </div>
+              )
+          )}
         </div>
     );
   }
