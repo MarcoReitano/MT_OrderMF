@@ -6,13 +6,13 @@ export default class CartIconReact extends React.Component {
 
     // Rest Call
     console.log("Icon auth: " + keycloak.authenticated);
-    axios.get("https://api.marcoreitano.dev/shoppingcarts")
+    axios.get("https://api.marcoreitano.dev/shoppingcart")
     .then(response => {
 
-      const newShoppingCart = response.data._embedded.shoppingCarts;
+      const newCartItems = response.data.cartItems;
 
       const newState = Object.assign({}, this.state,
-          {shoppingCarts: newShoppingCart});
+          {shoppingCarts: newCartItems});
 
       this.setState(newState);
     }).catch(error => console.log(error));
@@ -21,7 +21,7 @@ export default class CartIconReact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      shoppingCarts: []
+      cartItems: []
     };
   }
 
@@ -56,7 +56,7 @@ export default class CartIconReact extends React.Component {
           </style>
           <a className="fa-stack fa-2x has-badge"
              href="/shoppingcart"
-             data-count={this.state.shoppingCarts.length}>
+             data-count={this.state.cartItems.length}>
             <i class="fa fa-shopping-cart fa-stack-1x"></i>
           </a>
         </div>
