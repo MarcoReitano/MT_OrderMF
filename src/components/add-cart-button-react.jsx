@@ -13,9 +13,9 @@ export default class AddCartButtonReact extends React.Component {
     // Rest Call
     axios.post("https://api.marcoreitano.dev/shoppingcarts", {
       ticket: {
-        uri: "Test"
+        uri: this.props.ticketuri
       },
-      quantity: 3
+      quantity: this.state.selectedAmount
     })
     .then(response => {
     }).catch(error => console.log(error));
