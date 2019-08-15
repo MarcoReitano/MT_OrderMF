@@ -58,6 +58,8 @@ export default class CartViewReact extends React.Component {
           <button className="button" onClick={this.handleOrder}>
             Order now!
           </button>
+          <div>{this.state.shoppingCart.id}</div>
+          <div>{this.state.shoppingCart.customer.username}</div>
           {this.state.shoppingCart.cartItems.map((item) => (
                   <div className="box">
                     <div>{item.quantity}</div>
