@@ -33,3 +33,4 @@ export default class CartViewReact extends React.Component {
     );
   }
 }
+

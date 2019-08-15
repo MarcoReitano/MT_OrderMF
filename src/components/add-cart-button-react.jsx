@@ -1,8 +1,30 @@
 import * as React from 'react';
+import ReactWebComponent from 'react-web-component';
 
 export default class AddCartButtonReact extends React.Component {
-  componentDidMount = () => {
+  handleDropDown = () => {
+    this.setState({dropdown: !this.state.dropdown});
+  };
+  handleAmountSelection = (foo) => {
+    this.setState({selectedAmount: foo});
+  };
+  handleAddToCart = () => {
+    console.log("Add to cart: " + this.state.selectedAmount)
+  };
 
+  constructor(props) {
+    super(props);
+    console.log(this.props);
+
+    this.state = {
+      selectedAmount: 1,
+      amounts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      dropdown: false
+    };
+  }
+
+  componentDidMount() {
+    console.log(this.props.ticketuri);
     // // Rest Call
     // axios.get("https://api.marcoreitano.dev/shoppingcarts")
     // .then(response => {
@@ -15,28 +37,6 @@ export default class AddCartButtonReact extends React.Component {
     //   this.setState(newState);
     // }).catch(error => console.log(error));
   };
-  handleDropDown = () => {
-    this.setState({dropdown: !this.state.dropdown});
-  };
-
-  handleAmountSelection = (foo) => {
-    this.setState({selectedAmount: foo});
-  };
-
-  handleAddToCart = () => {
-    console.log("Add to cart: " + this.state.selectedAmount)
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      shoppingCarts: [],
-      selectedAmount: 1,
-      amounts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      dropdown: false
-    }
-    ;
-  }
 
   render() {
 
@@ -93,3 +93,5 @@ export default class AddCartButtonReact extends React.Component {
     );
   }
 }
+
+ReactWebComponent.create(<AddCartButtonReact/>, 'order-add-cart-button');

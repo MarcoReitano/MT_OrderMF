@@ -62,7 +62,7 @@ export default class CartIconReact extends React.Component {
             "https://kit-free.fontawesome.com/releases/latest/css/free.min.css";
             {badgecss}
           </style>
-          <a className="fa-stack fa-2x has-badge"
+          <a className="fa-stack has-badge"
              href="/shoppingcart"
              data-count={this.state.cartItems.length}>
             <i class="fa fa-shopping-cart fa-stack-1x"></i>

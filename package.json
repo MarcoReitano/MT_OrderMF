@@ -27,6 +27,8 @@
     "core-js": "^3.2.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-shadow-dom-retarget-events": "^1.0.10"
+    "react-shadow-dom-retarget-events": "^1.0.10",
+    "react-web-component": "https://github.com/spring-media/react-web-component",
+    "react-web-component-style-loader": "^0.1.4-alpha"
   }
 }
