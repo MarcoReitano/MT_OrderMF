@@ -48,6 +48,7 @@ export default class CartViewReact extends React.Component {
           {this.state.cartItems.map((item) => (
                   <div>
                     <div>{item.quantity}</div>
+                    <div>{item.ticket.uri}</div>
                     <button className="button" onClick={this.handleDelete}>
                       <i className="fas fa-times"/>
                     </button>
