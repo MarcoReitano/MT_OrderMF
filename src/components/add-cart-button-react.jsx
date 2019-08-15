@@ -12,12 +12,15 @@ export default class AddCartButtonReact extends React.Component {
   handleAddToCart = () => {
     console.log("Add to cart: " + this.state.selectedAmount)
     // Rest Call
-    axios.post("https://api.marcoreitano.dev/shoppingcarts", {
-      ticket: {
-        uri: this.props.ticketuri
-      },
-      quantity: this.state.selectedAmount
-    })
+    axios.post("https://api.marcoreitano.dev/shoppingcarts",
+        {
+          ticket: {
+            uri: this.props.ticketuri
+          },
+          quantity: this.state.selectedAmount
+        },
+        {headers: {'Authorization': "bearer " + keycloak.token}}
+    )
     .then(response => {
     }).catch(error => console.log(error));
   };
@@ -28,7 +31,6 @@ export default class AddCartButtonReact extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(this.props);
 
     this.state = {
       selectedAmount: 1,
