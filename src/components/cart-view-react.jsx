@@ -57,7 +57,7 @@ export default class CartViewReact extends React.Component {
             "https://kit-free.fontawesome.com/releases/latest/css/free.min.css";
           </style>
           ShoppingcartView
-          <button className="button" onClick={this.handleOrder}>
+          <button className="button is-primary" onClick={this.handleOrder}>
             Order now!
           </button>
           <div>{this.state.shoppingCart.id}</div>
