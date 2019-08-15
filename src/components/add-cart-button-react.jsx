@@ -11,20 +11,9 @@ export default class AddCartButtonReact extends React.Component {
   handleAddToCart = () => {
     console.log("Add to cart: " + this.state.selectedAmount)
   };
-
-  constructor(props) {
-    super(props);
-    console.log(this.props);
-
-    this.state = {
-      selectedAmount: 1,
-      amounts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-      dropdown: false
-    };
-  }
-
-  componentDidMount() {
+  componentDidMount = () => {
     console.log(this.props.ticketuri);
+    console.log(this.props.available);
     // // Rest Call
     // axios.get("https://api.marcoreitano.dev/shoppingcarts")
     // .then(response => {
@@ -37,6 +26,17 @@ export default class AddCartButtonReact extends React.Component {
     //   this.setState(newState);
     // }).catch(error => console.log(error));
   };
+
+  constructor(props) {
+    super(props);
+    console.log(this.props);
+
+    this.state = {
+      selectedAmount: 1,
+      amounts: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      dropdown: false
+    };
+  }
 
   render() {
 
