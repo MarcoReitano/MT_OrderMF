@@ -1,5 +1,6 @@
 import * as React from 'react';
 import axios from 'axios';
+import ReactWebComponent from "react-web-component";
 
 export default class OrderViewReact extends React.Component {
 
@@ -48,3 +49,5 @@ export default class OrderViewReact extends React.Component {
     );
   }
 }
+
+ReactWebComponent.create(<OrderViewReact/>, 'order-view');

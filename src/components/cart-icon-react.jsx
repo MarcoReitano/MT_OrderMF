@@ -1,4 +1,5 @@
 import * as React from 'react';
+import ReactWebComponent from 'react-web-component';
 import axios from 'axios';
 
 export default class CartIconReact extends React.Component {
@@ -71,3 +72,4 @@ export default class CartIconReact extends React.Component {
     );
   }
 }
+ReactWebComponent.create(<CartIconReact/>, 'order-shoppingcart-icon');

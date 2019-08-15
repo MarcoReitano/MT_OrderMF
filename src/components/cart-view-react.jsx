@@ -1,5 +1,6 @@
 import * as React from 'react';
 import axios from 'axios';
+import ReactWebComponent from "react-web-component";
 
 export default class CartViewReact extends React.Component {
   componentDidMount = () => {
@@ -33,4 +34,4 @@ export default class CartViewReact extends React.Component {
     );
   }
 }
-
+ReactWebComponent.create(<CartViewReact/>, 'cart-view');

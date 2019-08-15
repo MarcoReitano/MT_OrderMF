@@ -9,7 +9,8 @@ pipeline {
             steps {
                 sh 'node --version'
                 sh 'npm install -g yarn'
-                sh "yarn install"
+                sh 'apk add --no-cache git'
+                sh 'yarn install'
                 sh 'npm run build'
             }
         }
