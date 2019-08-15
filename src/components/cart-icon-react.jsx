@@ -6,6 +6,20 @@ export default class CartIconReact extends React.Component {
 
     // Rest Call
     console.log("Icon auth: " + keycloak.authenticated);
+
+    if (keycloak.authenticated) {
+      this.fetchShoppingCart();
+    }
+  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      cartItems: []
+    };
+  }
+
+  fetchShoppingCart() {
     axios.get("https://api.marcoreitano.dev/shoppingcart")
     .then(response => {
 
@@ -16,13 +30,6 @@ export default class CartIconReact extends React.Component {
 
       this.setState(newState);
     }).catch(error => console.log(error));
-  };
-
-  constructor(props) {
-    super(props);
-    this.state = {
-      cartItems: []
-    };
   }
 
   render() {
