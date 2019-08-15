@@ -27,6 +27,10 @@ export default class CartViewReact extends React.Component {
     }).catch(error => console.log(error));
   }
 
+  orderShoppingCart() {
+
+  }
+
   handleDelete() {
     console.log("Should delete");
   }
@@ -52,16 +56,16 @@ export default class CartViewReact extends React.Component {
           <button className="button" onClick={this.handleOrder}>
             Order now!
           </button>
-          {this.state.shoppingCart.cartItems.map((item) => (
-                  <div className="box">
-                    <div>{item.quantity}</div>
-                    <div>{item.ticket.uri}</div>
-                    <button className="button is-small" onClick={this.handleDelete}>
-                      <i className="fas fa-times"/>
-                    </button>
-                  </div>
-              )
-          )}
+          {/*{this.state.cartItems.map((item) => (*/}
+          {/*<div className="box">*/}
+          {/*<div>{item.quantity}</div>*/}
+          {/*<div>{item.ticket.uri}</div>*/}
+          {/*<button className="button is-small" onClick={this.handleDelete}>*/}
+          {/*<i className="fas fa-times"/>*/}
+          {/*</button>*/}
+          {/*</div>*/}
+          {/*)*/}
+          {/*)}*/}
         </div>
     );
   }
