@@ -12,7 +12,7 @@ export default class AddCartButtonReact extends React.Component {
   handleAddToCart = () => {
     console.log("Add to cart: " + this.state.selectedAmount)
     // Rest Call
-    axios.post("https://api.marcoreitano.dev/shoppingcarts",
+    axios.post("https://api.marcoreitano.dev/shoppingcart",
         {
           ticket: {
             uri: this.props.ticketuri
