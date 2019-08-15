@@ -20,7 +20,8 @@ export default class CartIconReact extends React.Component {
   }
 
   fetchShoppingCart() {
-    axios.get("https://api.marcoreitano.dev/shoppingcart")
+    axios.get("https://api.marcoreitano.dev/shoppingcart",
+        {headers: {'Authorization': "bearer " + keycloak.token}})
     .then(response => {
 
       const newCartItems = response.data.cartItems;
