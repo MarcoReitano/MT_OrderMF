@@ -31,6 +31,10 @@ export default class CartViewReact extends React.Component {
     console.log("Should delete");
   }
 
+  handleOrder() {
+    console.log("Order now");
+  }
+
   render() {
     return (
         <div>
@@ -45,11 +49,14 @@ export default class CartViewReact extends React.Component {
             "https://kit-free.fontawesome.com/releases/latest/css/free.min.css";
           </style>
           ShoppingcartView
+          <button className="button" onClick={this.handleDelete}>
+            Order now!
+          </button>
           {this.state.cartItems.map((item) => (
-                  <div>
+                  <div className="box">
                     <div>{item.quantity}</div>
                     <div>{item.ticket.uri}</div>
-                    <button className="button" onClick={this.handleDelete}>
+                    <button className="button is-small" onClick={this.handleDelete}>
                       <i className="fas fa-times"/>
                     </button>
                   </div>
