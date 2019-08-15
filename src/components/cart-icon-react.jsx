@@ -28,7 +28,7 @@ export default class CartIconReact extends React.Component {
       const newCartItems = response.data.cartItems;
 
       const newState = Object.assign({}, this.state,
-          {shoppingCarts: newCartItems});
+          {cartItems: newCartItems});
 
       this.setState(newState);
     }).catch(error => console.log(error));
