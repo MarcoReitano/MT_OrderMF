@@ -1,5 +1,6 @@
 import * as React from 'react';
 import ReactWebComponent from 'react-web-component';
+import axios from 'axios';
 
 export default class AddCartButtonReact extends React.Component {
   handleDropDown = () => {
