@@ -4,7 +4,7 @@ import ReactWebComponent from "react-web-component";
 
 export default class CartViewReact extends React.Component {
   componentDidMount = () => {
-    console.log("Icon auth: " + keycloak.authenticated);
+    console.log("Cart view auth: " + keycloak.authenticated);
 
     if (keycloak.authenticated) {
       this.fetchShoppingCart();
@@ -22,7 +22,8 @@ export default class CartViewReact extends React.Component {
     axios.get("https://api.marcoreitano.dev/shoppingcart",
         {headers: {'Authorization': "bearer " + keycloak.token}})
     .then(response => {
-      this.setState({shoppingCarts: response.data.cartItems});
+      this.setState({cartItems: response.data.cartItems});
+      console.log(this.state.cartItems);
     }).catch(error => console.log(error));
   }
 
