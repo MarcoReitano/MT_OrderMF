@@ -15,6 +15,8 @@ export default class CartViewReact extends React.Component {
     super(props);
     this.state = {
       shoppingCart: {
+        id: "",
+        customer: {},
         cartItems: []
       }
     };
