@@ -14,7 +14,9 @@ export default class CartViewReact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      shoppingCart: {}
+      shoppingCart: {
+        cartItems: []
+      }
     };
   }
 
@@ -56,16 +58,16 @@ export default class CartViewReact extends React.Component {
           <button className="button" onClick={this.handleOrder}>
             Order now!
           </button>
-          {/*{this.state.cartItems.map((item) => (*/}
-          {/*<div className="box">*/}
-          {/*<div>{item.quantity}</div>*/}
-          {/*<div>{item.ticket.uri}</div>*/}
-          {/*<button className="button is-small" onClick={this.handleDelete}>*/}
-          {/*<i className="fas fa-times"/>*/}
-          {/*</button>*/}
-          {/*</div>*/}
-          {/*)*/}
-          {/*)}*/}
+          {this.state.shoppingCart.cartItems.map((item) => (
+                  <div className="box">
+                    <div>{item.quantity}</div>
+                    <div>{item.ticket.uri}</div>
+                    <button className="button is-small" onClick={this.handleDelete}>
+                      <i className="fas fa-times"/>
+                    </button>
+                  </div>
+              )
+          )}
         </div>
     );
   }
