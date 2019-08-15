@@ -14,7 +14,7 @@ export default class CartViewReact extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      cartItems: []
+      shoppingCart: {}
     };
   }
 
@@ -22,8 +22,8 @@ export default class CartViewReact extends React.Component {
     axios.get("https://api.marcoreitano.dev/shoppingcart",
         {headers: {'Authorization': "bearer " + keycloak.token}})
     .then(response => {
-      this.setState({cartItems: response.data.cartItems});
-      console.log(this.state.cartItems);
+      this.setState({shoppingCart: response.data});
+      console.log(this.state.shoppingCart);
     }).catch(error => console.log(error));
   }
 
@@ -49,10 +49,10 @@ export default class CartViewReact extends React.Component {
             "https://kit-free.fontawesome.com/releases/latest/css/free.min.css";
           </style>
           ShoppingcartView
-          <button className="button" onClick={this.handleDelete}>
+          <button className="button" onClick={this.handleOrder}>
             Order now!
           </button>
-          {this.state.cartItems.map((item) => (
+          {this.state.shoppingCart.cartItems.map((item) => (
                   <div className="box">
                     <div>{item.quantity}</div>
                     <div>{item.ticket.uri}</div>
