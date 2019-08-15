@@ -40,7 +40,7 @@ export default class CartViewReact extends React.Component {
   }
 
   handleOrder() {
-    axios.put("https://api.marcoreitano.dev/shoppingcart/order",
+    axios.put("https://api.marcoreitano.dev/shoppingcart/order", {},
         {headers: {'Authorization': "bearer " + keycloak.token}})
     .then(response => {
       console.log(response);
